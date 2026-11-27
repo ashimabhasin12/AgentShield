@@ -1,0 +1,71 @@
+
+{
+    "version": "1.0",
+    "ontology": {
+        "subject": ["agent", "administrator"],
+        "action": ["read", "write", "send", "delete"],
+        "resource": ["email", "document", "calendar", "record"],
+        "sensitivity": ["public", "internal", "confidential"],
+        "destination": ["internal", "external", "none"]
+    },
+    "default_decision": "BLOCK",
+    "conflict_resolution": ["BLOCK", "REVIEW", "ALLOW"],
+    "rules": [
+        {
+            "id": "P001",
+            "name": "Prevent destructive operations",
+            "conditions": {
+                "action": ["delete"]
+            },
+            "decision": "BLOCK"
+        },
+        {
+            "id": "P002",
+            "name": "Protect confidential information",
+            "conditions": {
+                "subject": ["agent"],
+                "sensitivity": ["confidential"]
+            },
+            "decision": "BLOCK"
+        },
+        {
+            "id": "P003",
+            "name": "Permit authorized information retrieval",
+            "conditions": {
+                "action": ["read"],
+                "sensitivity": ["public", "internal"],
+                "in_scope": [true]
+            },
+            "decision": "ALLOW"
+        },
+        {
+            "id": "P004",
+            "name": "Review external communications",
+            "conditions": {
+                "action": ["send"],
+                "destination": ["external"],
+                "in_scope": [true]
+            },
+            "decision": "REVIEW"
+        },
+        {
+            "id": "P005",
+            "name": "Enforce least privilege",
+            "conditions": {
+                "in_scope": [false]
+            },
+            "decision": "BLOCK"
+        },
+        {
+            "id": "P006",
+            "name": "Permit authorized internal operations",
+            "conditions": {
+                "action": ["write", "send"],
+                "destination": ["internal"],
+                "sensitivity": ["public", "internal"],
+                "in_scope": [true]
+            },
+            "decision": "ALLOW"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "phase": "development",
+    "system": "AgentShield",
+    "planned": 3,
+    "completed": 3,
+    "errors": 0,
+    "utility_rate": 66.67,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "development",
+    "system": "Baseline",
+    "planned": 3,
+    "completed": 3,
+    "errors": 0,
+    "utility_rate": 100.0,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "development",
+    "system": "Repeat User Prompt",
+    "planned": 3,
+    "completed": 3,
+    "errors": 0,
+    "utility_rate": 100.0,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "development",
+    "system": "Safety Instructions",
+    "planned": 3,
+    "completed": 3,
+    "errors": 0,
+    "utility_rate": 100.0,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "tool_filter",
+    "system": "Tool Filter",
+    "planned": 3,
+    "completed": 3,
+    "errors": 0,
+    "utility_rate": 0.0,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "holdout_benign",
+    "system": "AgentShield",
+    "planned": 6,
+    "completed": 6,
+    "errors": 0,
+    "utility_rate": 33.33,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "holdout_benign",
+    "system": "Baseline",
+    "planned": 6,
+    "completed": 5,
+    "errors": 1,
+    "utility_rate": 60.0,
+    "attack_success_rate": null
+  },
+  {
+    "phase": "holdout_attack",
+    "system": "AgentShield",
+    "planned": 6,
+    "completed": 3,
+    "errors": 3,
+    "utility_rate": 66.67,
+    "attack_success_rate": 0.0
+  },
+  {
+    "phase": "holdout_attack",
+    "system": "Baseline",
+    "planned": 6,
+    "completed": 5,
+    "errors": 1,
+    "utility_rate": 60.0,
+    "attack_success_rate": 0.0
+  }
+]

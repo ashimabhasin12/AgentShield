@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "default_decision": "BLOCK",
+  "rules": [
+    {"id": "LIVE-DOC-001", "role": "local_operator", "action": "analyze_document", "resource": "explicitly_selected_upload", "decision": "ALLOW"}
+  ]
+}

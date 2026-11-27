@@ -1,0 +1,32 @@
+﻿# Credentials
+.env
+.env.*
+credentials*.json
+token*.json
+client_secret*.json
+*.pem
+*.key
+
+# Python environments
+.venv*/
+venv/
+__pycache__/
+*.pyc
+
+# Databases and backups
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+backups/
+
+# Private data
+sandbox/
+datasets/
+research_results/
+results/
+*_results/
+
+# IDE files
+.vscode/
+.idea/

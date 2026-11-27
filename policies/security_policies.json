@@ -1,0 +1,188 @@
+{
+    "policy_version": "1.2.0",
+    "framework": "AgentShield",
+    "default_decision": "BLOCK",
+    "conflict_resolution": "most_restrictive",
+    "policies": [
+        {
+            "policy_id": "POL-001",
+            "name": "Public File Access",
+            "action": "read_file",
+            "resource": "public_report.txt",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-002",
+            "name": "Email Approval Requirement",
+            "action": "send_email",
+            "resource": "*",
+            "decision": "REVIEW",
+            "enabled": true,
+            "priority": 200
+        },
+        {
+            "policy_id": "POL-003",
+            "name": "Record Deletion Protection",
+            "action": "delete_record",
+            "resource": "*",
+            "decision": "BLOCK",
+            "enabled": true,
+            "priority": 300
+        },
+        {
+            "policy_id": "POL-004",
+            "name": "Authorized Calendar Date Access",
+            "action": "get_current_day",
+            "resource": "workspace/calendar",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-005",
+            "name": "Authorized Workspace Email Search",
+            "action": "search_emails",
+            "resource": "workspace/email",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-006",
+            "name": "AgentDojo Banking Read File",
+            "action": "read_file",
+            "resource": "banking/files",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-007",
+            "name": "AgentDojo Banking Get Scheduled Transactions",
+            "action": "get_scheduled_transactions",
+            "resource": "banking/transactions",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-008",
+            "name": "AgentDojo Banking Get Most Recent Transactions",
+            "action": "get_most_recent_transactions",
+            "resource": "banking/transactions",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-009",
+            "name": "AgentDojo Slack Get Webpage",
+            "action": "get_webpage",
+            "resource": "slack/web",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-010",
+            "name": "AgentDojo Slack Get Channels",
+            "action": "get_channels",
+            "resource": "slack/channels",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-011",
+            "name": "AgentDojo Travel Get All Hotels In City",
+            "action": "get_all_hotels_in_city",
+            "resource": "travel/hotels",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-012",
+            "name": "AgentDojo Travel Get All Restaurants In City",
+            "action": "get_all_restaurants_in_city",
+            "resource": "travel/restaurants",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-013",
+            "name": "AgentDojo Workspace Search Calendar Events",
+            "action": "search_calendar_events",
+            "resource": "workspace/calendar",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-014",
+            "name": "AgentDojo Workspace Get Day Calendar Events",
+            "action": "get_day_calendar_events",
+            "resource": "workspace/calendar",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-015",
+            "name": "AgentDojo Workspace Search Files",
+            "action": "search_files",
+            "resource": "workspace/files",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-016",
+            "name": "AgentDojo Workspace List Files",
+            "action": "list_files",
+            "resource": "workspace/files",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-017",
+            "name": "AgentDojo Workspace Search Files By Filename",
+            "action": "search_files_by_filename",
+            "resource": "workspace/files",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-018",
+            "name": "Verified Travel Get Hotels Prices",
+            "action": "get_hotels_prices",
+            "resource": "travel/hotels",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-019",
+            "name": "Verified Travel Get Rating Reviews For Hotels",
+            "action": "get_rating_reviews_for_hotels",
+            "resource": "travel/hotels",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "policy_id": "POL-020",
+            "name": "Verified Travel Get Hotels Address",
+            "action": "get_hotels_address",
+            "resource": "travel/hotels",
+            "decision": "ALLOW",
+            "enabled": true,
+            "priority": 100
+        }
+    ]
+}

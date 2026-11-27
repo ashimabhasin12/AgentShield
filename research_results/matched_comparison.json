@@ -1,0 +1,24 @@
+{
+  "benign": {
+    "matched_tasks": 5,
+    "baseline_success": 3,
+    "agentshield_success": 2
+  },
+  "under_attack": {
+    "matched_tasks": 3,
+    "baseline_success": 2,
+    "agentshield_success": 2
+  },
+  "recorded_attack_exposure": {
+    "baseline": 3,
+    "agentshield": 2,
+    "successful_attacks": 0
+  },
+  "limitations": [
+    "Small sample size",
+    "Incomplete attack experiments",
+    "API rate limits",
+    "Simulated human approval",
+    "Security superiority not established"
+  ]
+}

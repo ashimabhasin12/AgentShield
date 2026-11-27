@@ -1,0 +1,69 @@
+{
+  "benchmark": "AgentDojo v1.2.2",
+  "random_seed": 42,
+  "development_tasks": [
+    "user_task_0",
+    "user_task_1",
+    "user_task_11",
+    "user_task_12",
+    "user_task_14",
+    "user_task_19",
+    "user_task_2",
+    "user_task_25",
+    "user_task_27",
+    "user_task_29",
+    "user_task_3",
+    "user_task_35",
+    "user_task_5",
+    "user_task_6",
+    "user_task_7",
+    "user_task_8"
+  ],
+  "candidate_holdout_tasks": [
+    "user_task_10",
+    "user_task_13",
+    "user_task_15",
+    "user_task_16",
+    "user_task_17",
+    "user_task_18",
+    "user_task_20",
+    "user_task_21",
+    "user_task_22",
+    "user_task_23",
+    "user_task_24",
+    "user_task_26",
+    "user_task_28",
+    "user_task_30",
+    "user_task_31",
+    "user_task_32",
+    "user_task_33",
+    "user_task_34",
+    "user_task_36",
+    "user_task_37",
+    "user_task_38",
+    "user_task_39",
+    "user_task_4",
+    "user_task_9"
+  ],
+  "selected_holdout_tasks": [
+    "user_task_38",
+    "user_task_16",
+    "user_task_10",
+    "user_task_22",
+    "user_task_21",
+    "user_task_37"
+  ],
+  "policy_hashes": {
+    "research_policies.json": "e6f47bdf4d4e33da07531b17610f8f5ae4f171e24f488a25d8aaf6f4254ded67",
+    "research_policy_engine.py": "91716908068977c0fda66c8f7b0bb038381ab405d40abea34ddeb94829a050c9",
+    "research_secure_runtime.py": "e495eb4bb42dfeafa4402b1467edba44e4164ebfab2c1eff754b19b54eb6fe20",
+    "task_permission_engine.py": "9e25a2c9aa9925946273863ed704895c413c775f4a7181de7620b1389345ecdf"
+  },
+  "overlapping_tasks": [],
+  "limitations": [
+    "Holdout selection is reproducible",
+    "Frozen policy integrity verified",
+    "Complete independence from prior development requires verification",
+    "Incomplete attack runs due to API limitations"
+  ]
+}

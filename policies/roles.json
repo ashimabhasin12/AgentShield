@@ -1,0 +1,50 @@
+{
+    "roles": {
+        "guest": {
+            "permissions": [
+                "read_public"
+            ]
+        },
+        "user": {
+            "permissions": [
+                "read_public",
+                "read_file",
+                "search_data",
+                "get_current_day",
+                "search_emails",
+                "get_scheduled_transactions",
+                "get_most_recent_transactions",
+                "get_webpage",
+                "get_channels",
+                "get_all_hotels_in_city",
+                "get_all_restaurants_in_city",
+                "search_calendar_events",
+                "get_day_calendar_events",
+                "search_files",
+                "list_files",
+                "search_files_by_filename",
+                "get_hotels_prices",
+                "get_rating_reviews_for_hotels",
+                "get_hotels_address"
+            ]
+        },
+        "analyst": {
+            "permissions": [
+                "read_public",
+                "read_file",
+                "search_data",
+                "generate_report"
+            ]
+        },
+        "admin": {
+            "permissions": [
+                "read_public",
+                "read_file",
+                "search_data",
+                "generate_report",
+                "send_email",
+                "update_record"
+            ]
+        }
+    }
+}
