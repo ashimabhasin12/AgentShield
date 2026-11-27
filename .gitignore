@@ -30,3 +30,5 @@ results/
 # IDE files
 .vscode/
 .idea/
+
+archive/
