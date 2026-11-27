@@ -58,7 +58,7 @@ Security knowledge is represented through structured JSON policies and task-spec
 | P005 | Prevent actions outside the authorized task scope | BLOCK |
 | P006 | Permit authorized internal operations | ALLOW |
 
-The framework incorporates least privilege, confidentiality, default-deny authorization and human oversight.
+The framework incorporates least privilege, confidentiality, default-deny authorization and human oversight. The benchmark evaluation concerns the research runtime; live application features are prototypes and are not independently validated by these experiments.
 
 ## Technologies
 
@@ -164,7 +164,19 @@ These results use matched completed tasks from an earlier frozen-policy evaluati
 | REVIEW | 1 | 1 |
 | Total tool calls | 10 | 13 |
 
-Human approval was simulated during benchmark experiments. Blocked tool calls have not yet been individually classified as legitimate or malicious.
+Human approval was simulated during benchmark experiments. All 11 blocked calls were recorded as not executed (4 benign and 7 adversarial). Block rates were 40% and 53.8%, respectively; review rates were 10% and 7.7%. Blocked tool calls have not yet been individually classified as legitimate or malicious.
+
+## Experimental Record Verification
+
+A read-only audit of saved records on November 27, 2026 confirmed:
+
+- Reported utility and attack-success counts for the development runs and matched preliminary holdout comparison.
+- Matching recorded payload hashes across all five GPT-OSS-120B configurations for each of the three development tasks.
+- Matching payload hashes across the two additional GPT-OSS-20B defenses for all five shared completed holdout tasks.
+- Four matching SHA-256 hashes for the frozen policy files; six selected holdout tasks with no overlap with the 16 recorded excluded tasks.
+- Eleven unique completed additional defense runs, with Task 37 unresolved for Repeat User Prompt.
+
+Actual model exposure to injected content remains unverified. The exposure indicator was false even in a successful attack run; it cannot establish absence of exposure. Matching payload hashes establish recorded payload consistency, not identical model-visible context. Holdout independence from all earlier development activity is not established. The audit recalculated saved outcomes; it did not rerun the benchmark or independently validate its scoring implementation.
 
 ## Preliminary Findings
 
@@ -204,6 +216,22 @@ Experimental execution requires the appropriate Python dependencies, AgentDojo b
 
 API credentials must be configured locally and must never be committed to the repository.
 
+## Reproducibility
+
+The repository includes a [dependency snapshot](research_results/requirements-research.txt) and [repository revision record](research_results/repository_version.txt) captured during the verification phase. The recorded source revision is `e55442d`.
+
+| Setting | Recorded value |
+|---|---|
+| Python | 3.14.10 |
+| AgentDojo package | 0.1.35 |
+| Benchmark | v1.2.2, workspace suite |
+| OpenAI SDK | 3.59.0 |
+| Holdout selection seed | 42 |
+| API timeout / maximum retries (three listed scripts) | 120 seconds / 5 |
+| GPT-OSS-120B attack strategy | `important_instructions` |
+
+The dependency snapshot describes the environment at verification time, not a proven historical lockfile for every run. Temperature and maximum output tokens were not confirmed. The frozen policy snapshot and raw run records remain local pending review; selected summaries and plots are tracked here. Full independent reproduction has not yet been demonstrated.
+
 ## Related Research
 
 | Research | Relevance |
@@ -211,9 +239,13 @@ API credentials must be configured locally and must never be committed to the re
 | [AgentDojo](https://arxiv.org/abs/2406.13352) | Interactive benchmark for evaluating prompt injection attacks and defenses |
 | [Progent](https://arxiv.org/abs/2504.11703) | Programmable privilege enforcement for LLM agents |
 | [CaMeL](https://arxiv.org/abs/2503.18813) | Capability-based security and separation of trusted control from untrusted data |
+| [Greshake et al.](https://arxiv.org/abs/2302.12173) | Indirect prompt injection threat model |
+| [AgentSpec](https://arxiv.org/abs/2503.18666) | Declarative runtime constraints |
+| [ShieldAgent](https://proceedings.mlr.press/v267/chen25ae.html) | Verifiable agent safety policy reasoning |
+| [GuardAgent](https://arxiv.org/abs/2406.09187) | Knowledge-enabled guardrail agents |
 | [NIST SP 800-162](https://doi.org/10.6028/NIST.SP.800-162) | Attribute-based access control principles |
 
-The comparison with Progent and CaMeL is currently literature-based rather than a direct experimental comparison.
+Comparisons with external enforcement frameworks are literature-based rather than direct experimental comparisons. Progent and AgentSpec already implement related programmable runtime enforcement; this study does not claim that external declarative authorization is itself novel.
 
 ## Research Limitations
 
@@ -229,7 +261,7 @@ The comparison with Progent and CaMeL is currently literature-based rather than 
 
 The research framework has been implemented, and preliminary benign and adversarial experiments have been conducted.
 
-The current research is undergoing methodological validation and academic review in preparation for potential journal publication.
+The planned preliminary record audit and reproducibility documentation are complete. A journal-style manuscript has been prepared for supervisor review and is not included in this repository. Further scientific validation, authorship confirmation and venue-specific submission requirements remain pending. No acceptance or publication is claimed.
 
 ## Researcher
 
