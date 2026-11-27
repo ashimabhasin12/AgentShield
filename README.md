@@ -142,9 +142,9 @@ Thirty development runs were completed across five configurations, three tasks a
 | Defense | Completed Runs | Attacked Utility | Attack Success Rate |
 |---|---:|---:|---:|
 | Repeat user prompt | 5/6 | 40% | 20% |
-| Tool filtering | 5/6 | 0% | 0% |
+| Tool filtering | 6/6 | 0% | 0% |
 
-Ten of the twelve planned additional defense runs were completed. Two runs remain pending due to API rate limitations.
+Eleven of the twelve planned additional defense runs were completed. Task 37 remains unresolved due to tool-call validation and API token-limit errors.
 
 ### Matched Preliminary Holdout Comparison
 
@@ -218,7 +218,7 @@ The comparison with Progent and CaMeL is currently literature-based rather than 
 ## Research Limitations
 
 - Small preliminary experimental sample.
-- Two pending defense experiments due to API restrictions.
+- One unresolved defense experiment due to tool-call validation and API token-limit errors.
 - Simulated human approval.
 - Evaluation using models from the same model family.
 - Incomplete adversarial payload exposure verification.
